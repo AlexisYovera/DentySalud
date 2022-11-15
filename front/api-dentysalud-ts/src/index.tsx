@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//IMPORTAMOS BOOTSTRAP A LA PAGINA INDEX
+import "../node_modules/bootstrap/dist/css/bootstrap.css"
+
 //SE DECLARA UNA CONSTANTE CON EL NOMBRE ROOT QUE SE CARGARA EN EL index.html
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
