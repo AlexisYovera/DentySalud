@@ -5778,11 +5778,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alexis\\Desktop\\DSDI\\CICLO IV\\HERRAMIENTAS DE PROGRAMACION II\\PROYECTO\\api-dentysalud\\api-dentysalud\\api-dentysalud.csproj",
+      "projectUniqueName": "C:\\Users\\Alexis\\Desktop\\DSDI\\CICLO IV\\HERRAMIENTAS DE PROGRAMACION II\\ProyectoDentySalud\\DentySalud\\back\\api-dentysalud\\api-dentysalud\\api-dentysalud.csproj",
       "projectName": "api-dentysalud",
-      "projectPath": "C:\\Users\\Alexis\\Desktop\\DSDI\\CICLO IV\\HERRAMIENTAS DE PROGRAMACION II\\PROYECTO\\api-dentysalud\\api-dentysalud\\api-dentysalud.csproj",
+      "projectPath": "C:\\Users\\Alexis\\Desktop\\DSDI\\CICLO IV\\HERRAMIENTAS DE PROGRAMACION II\\ProyectoDentySalud\\DentySalud\\back\\api-dentysalud\\api-dentysalud\\api-dentysalud.csproj",
       "packagesPath": "C:\\Users\\Alexis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alexis\\Desktop\\DSDI\\CICLO IV\\HERRAMIENTAS DE PROGRAMACION II\\PROYECTO\\api-dentysalud\\api-dentysalud\\obj\\",
+      "outputPath": "C:\\Users\\Alexis\\Desktop\\DSDI\\CICLO IV\\HERRAMIENTAS DE PROGRAMACION II\\ProyectoDentySalud\\DentySalud\\back\\api-dentysalud\\api-dentysalud\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\HERRAMIENTAS VISUAL STUDIO\\NuGetPackages"
@@ -5857,7 +5857,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
