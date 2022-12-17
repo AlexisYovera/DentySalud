@@ -1,4 +1,4 @@
-export default function componentePrincipal(){
+export default function ComponentePrincipal(){
     return(
         <div>
             <h1>Principal</h1>

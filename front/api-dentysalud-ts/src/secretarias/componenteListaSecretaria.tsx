@@ -1,4 +1,24 @@
-export default function componenteListaSecretaria() {
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { SecretariaDTO } from "./secretaria.model";
+
+export default function ComponenteListaSecretaria() {
+    const url = "https://localhost:44372/api-dentysalud/secretaria";
+    const [secretarias, setSecretarias] = useState<SecretariaDTO[]>();
+    const peticionesGet = async () => {
+        await axios
+            .get(url)
+            .then((response) => {
+                setSecretarias(response.data);
+            })
+            .catch((error) => { console.log(error) });
+    };
+
+    //LLAMAMOS LA PETICION DENTRO DEL USEEFECT
+    useEffect(() => {
+        peticionesGet();
+    }, []);
     return (
         <div>
             <h1>Lista de Secretaria</h1>
@@ -6,7 +26,7 @@ export default function componenteListaSecretaria() {
                 <table className="table table-hover">
                     <thead className="table-light">
                         <tr>
-                            <th scope="col">Id</th>
+                            <th scope="col">Codigo</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Apellido</th>
                             <th scope="col">DNI</th>
@@ -16,39 +36,20 @@ export default function componenteListaSecretaria() {
                         </tr>
                     </thead>
                     <tbody className="table-group-divider">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Jana</td>
-                            <td>Otto</td>
-                            <td>12345678</td>
-                            <td>123456789</td>
+                    {secretarias?.map((Secretaria) => (
+                        <tr key={Secretaria.codigosecretaria}>
+                            <th scope="row">{Secretaria.codigosecretaria}</th>
+                            <td>{Secretaria.nombre}</td>
+                            <td>{Secretaria.apellido}</td>
+                            <td>{Secretaria.dni}</td>
+                            <td>{Secretaria.telefono}</td>
                             <td>
-                                <a href="#" className="btn btn-success">Editar</a>
+                            <Link to={`/secretarias/actualizar/${Secretaria.codigosecretaria}`} className="btn btn-success">Editar</Link>
+
                                 <a href="#" className="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Liset</td>
-                            <td>Thornton</td>
-                            <td>87654321</td>
-                            <td>987654321</td>
-                            <td>
-                                <a href="#" className="btn btn-success">Editar</a>
-                                <a href="#" className="btn btn-danger">Eliminar</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Marry</td>
-                            <td>Bird</td>
-                            <td>15975346</td>
-                            <td>159753456</td>
-                            <td>
-                                <a href="#" className="btn btn-success">Editar</a>
-                                <a href="#" className="btn btn-danger">Eliminar</a>
-                            </td>
-                        </tr>
+                        ))}  
                     </tbody>
                 </table>
             </div>

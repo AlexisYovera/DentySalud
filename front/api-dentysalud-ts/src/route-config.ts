@@ -1,6 +1,12 @@
+import ComponenteActualizarCita from "./citas/componenteActualizarCita";
+import componenteListaCita from "./citas/componenteListaCita";
+import ComponenteRegistrarCita from "./citas/componenteRegistrarCita";
 import componenteActualizarOdontologo from "./odontologos/componenteActualizarOdontologo";
 import componenteListaOdontologo from "./odontologos/componenteListaOdontologo";
 import componenteRegistrarOdontologo from "./odontologos/componenteRegistrarOdontologo";
+import ComponenteActualizarPaciente from "./pacientes/componenteActualizarPaciente";
+import componenteListaPaciente from "./pacientes/componenteListaPaciente";
+import ComponenteRegistrarPaciente from "./pacientes/componenteRegistrarPaciente";
 import componentePrincipal from "./principal/componentePrincipal";
 import componenteRedireccional from "./principal/componenteRedireccional";
 import componenteActualizarSecretaria from "./secretarias/componenteActualizarSecretaria";
@@ -15,6 +21,12 @@ const rutas=[
     {path:'/secretarias',componente:componenteListaSecretaria},
     {path:'/secretarias/registrar',componente:componenteRegistrarSecretaria},
     {path:'/secretarias/actualizar/:id',componente:componenteActualizarSecretaria},
+    {path:'/pacientes',componente:componenteListaPaciente},
+    {path:'/pacientes/registrar',componente:ComponenteRegistrarPaciente},
+    {path:'/pacientes/actualizar/:id',componente:ComponenteActualizarPaciente},
+    {path:'/citas',componente:componenteListaCita},
+    {path:'/citas/registrar',componente:ComponenteRegistrarCita},
+    {path:'/citas/actualizar/:id',componente:ComponenteActualizarCita},
     //CREAMOS UN PATH PARA RUTAS NO ENCONTRADAS
     {path:'*',componente:componenteRedireccional}
 ]

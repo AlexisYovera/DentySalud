@@ -1,21 +1,22 @@
 import axios from "axios";
 import { Field, Formik, Form } from "formik";
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import * as Yup from "yup";
-import { SecretariaDTO } from "./secretaria.model";
 
-export default function ComponenteActualizarSecretaria(){
+import { Link, useNavigate, useParams } from "react-router-dom";
+
+import * as Yup from "yup";
+import { CitaDTO } from "./cita.model";
+export default function ComponenteActualizarCita() {
     const history = useNavigate();
     const { id }: any = useParams();
-    const url = "https://localhost:44372/api-dentysalud/odontologo/";
-    const [secretarias, setSecretarias] = useState<SecretariaDTO>();
+    const url = "https://localhost:44372/api-dentysalud/cita/";
+    const [citas, setCitas] = useState<CitaDTO>();
     //se realiza la peticion al API por medio del axios
     const peticionesGet = async () => {
         await axios
             .get(url + id)
             .then((response) => {
-                setSecretarias(response.data);
+                setCitas(response.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -26,36 +27,39 @@ export default function ComponenteActualizarSecretaria(){
         peticionesGet();
     }, []);
 
-    async function ActualizarOdontologo(secretaria: SecretariaDTO) {
+    async function ActualizarCita(cita: CitaDTO) {
         try {
-            await axios.put(url + id, secretaria);
-            history("/secretarias");
+            await axios.put(url + id, cita);
+            history("/citas");
         } catch (error) {
             console.log(error);
         }
     }
     return (
         <div>
-            <h1>Actualizar Secretaria</h1>
+            <h1>Actualizar Cita</h1>
             <Formik
                 initialValues={{
-                    codigosecretaria: 0,
-                    nombre: "",
-                    apellido:"",
-                    dni:"",
-                    telefono:"",                  
+                    idcita: 0,
+                    nombrepaciente: "",
+                    apellidopaciente:"",
+                    local:"",
+                    hora:"",
+                    fecha:"",
+
                 }}
                 onSubmit={async (valores) => {
-                    await ActualizarOdontologo({
-                        codigosecretaria: valores.codigosecretaria,
-                        nombre: valores.nombre,
-                        apellido: valores.apellido,
-                        dni:valores.dni,
-                        telefono:valores.telefono,
+                    await ActualizarCita({
+                        idcita: valores.idcita,
+                        nombrepaciente: valores.nombrepaciente,
+                        apellidopaciente: valores.apellidopaciente,
+                        local:valores.local,
+                        hora:valores.hora,
+                        fecha:valores.fecha, 
                     });
                 }}
                 validationSchema={Yup.object({
-                    nombre: Yup.string()
+                    nombrepaciente: Yup.string()
                         .required("Este campo es requerido")
                         .max(100, "La longitud máxima del nombre es 100 caracteres"),
                 })}
@@ -63,12 +67,13 @@ export default function ComponenteActualizarSecretaria(){
                 <Form>
                     <div className="row">
                         <div className="col-6">
-                            <label className="form-label">Id Secretaria:</label>
+                            <label className="form-label">idcita:</label>
                             <Field
-                                name="codigosecretaria"
+                                name="idcita"
                                 type="text"
-                                value={secretarias?.codigosecretaria}                             
-                                className="form-control" readonly                        
+                                value={citas?.idcita}                             
+                                className="form-control"
+                                readonly
                             />
                         </div>
                     </div>
@@ -77,9 +82,9 @@ export default function ComponenteActualizarSecretaria(){
                         <div className="col-6">
                             <label className="form-label">Nombre:</label>
                             <Field
-                                name="nombre"
+                                name="nombrepaciente"
                                 type="text"
-                                value={secretarias?.nombre}
+                                value={citas?.nombrepaciente}
                                 className="form-control"
                             />
                         </div>
@@ -88,42 +93,54 @@ export default function ComponenteActualizarSecretaria(){
                         <div className="col-6">
                             <label className="form-label">Apellido:</label>
                             <Field
-                                name="apellido"
+                                name="apellidopaciente"
                                 type="text"
-                                value={secretarias?.apellido}
+                                value={citas?.apellidopaciente}
                                 className="form-control"
                             />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-6">
-                            <label className="form-label">DNI:</label>
+                            <label className="form-label">Local:</label>
                             <Field
-                                name="dni"
+                                name="local"
                                 type="text"
-                                value={secretarias?.dni}
+                                value={citas?.local}
                                 className="form-control"
                             />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-6">
-                            <label className="form-label">Telefono:</label>
+                            <label className="form-label">Hora:</label>
                             <Field
-                                name="telefono"
+                                name="hora"
                                 type="text"
-                                value={secretarias?.telefono}
+                                value={citas?.hora}
                                 className="form-control"
                             />
                         </div>
                     </div>
-                               
+                    <div className="row">
+                        <div className="col-6">
+                            <label className="form-label">Fecha:</label>
+                            <Field
+                                name="fecha"
+                                type="text"
+                                value={citas?.fecha}
+                                className="form-control"
+                            />
+                        </div>
+                    </div>
+
+                    
                     <div className="row mt-2">
                         <div className="col-6">
                             <button type="submit" className="btn btn-success">
                                 Actualizar
                             </button>
-                            <Link className="btn btn-secondary" to="/secretarias">
+                            <Link className="btn btn-secondary" to="/citas">
                                 Cancelar
                             </Link>
                         </div>

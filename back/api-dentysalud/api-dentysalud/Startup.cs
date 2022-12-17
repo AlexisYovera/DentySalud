@@ -34,6 +34,15 @@ namespace api_dentysalud
                     options.UseSqlServer(
                             Configuration.GetConnectionString("defaultConnection")));
 
+            services.AddCors(options =>
+            {
+                var frontendurl = Configuration.GetValue<string>("frontend_url");
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins(frontendurl).AllowAnyMethod().AllowAnyHeader();
+                });
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "api_dentysalud", Version = "v1" });
@@ -53,6 +62,8 @@ namespace api_dentysalud
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 

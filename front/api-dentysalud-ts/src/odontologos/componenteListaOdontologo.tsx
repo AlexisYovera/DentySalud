@@ -1,4 +1,24 @@
-export default function componenteListaOdontologo(){
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { OdontologoDTO } from "./odontologo.model";
+
+export default function ComponenteListaOdontologo(){
+    const url = "https://localhost:44372/api-dentysalud/odontologo";
+    const [odontologos, setOdontologos] = useState<OdontologoDTO[]>();
+    const peticionesGet = async () => {
+        await axios
+        .get(url)
+        .then((response) => {
+            setOdontologos(response.data);
+        })
+        .catch((error) => { console.log(error) });
+    };
+
+    //LLAMAMOS LA PETICION DENTRO DEL USEEFECT
+        useEffect(() => {
+        peticionesGet();
+    },[]);
     return(
         <div>
             <h1>Lista de Odontologos</h1>
@@ -6,7 +26,7 @@ export default function componenteListaOdontologo(){
             <table className="table table-hover">
                 <thead className="table-light">
                     <tr>
-                        <th scope="col">Id</th>
+                        <th scope="col">Codigo</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">DNI</th>
@@ -15,39 +35,19 @@ export default function componenteListaOdontologo(){
                     </tr>
                 </thead>
                 <tbody className="table-group-divider">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>12345678</td>
-                        <td>123456789</td>
+                    {odontologos?.map((Odontologo) => (
+                    <tr key={Odontologo.codigoodontologo}>
+                        <th scope="row">{Odontologo.codigoodontologo}</th>
+                        <td>{Odontologo.nombre}</td>
+                        <td>{Odontologo.apellido}</td>
+                        <td>{Odontologo.dni}</td>
+                        <td>{Odontologo.telefono}</td>
                         <td>
-                            <a href="#" className="btn btn-success">Editar</a>
+                        <Link to={`/odontologos/actualizar/${Odontologo.codigoodontologo}`} className="btn btn-success">Editar</Link>
                             <a href="#" className="btn btn-danger">Eliminar</a>
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>87654321</td>
-                        <td>987654321</td>
-                        <td>
-                            <a href="#" className="btn btn-success">Editar</a>
-                            <a href="#" className="btn btn-danger">Eliminar</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>Bird</td>
-                        <td>15975346</td>
-                        <td>159753456</td>
-                        <td>
-                            <a href="#" className="btn btn-success">Editar</a>
-                            <a href="#" className="btn btn-danger">Eliminar</a>
-                        </td>
-                    </tr>
+                     ))}                  
                 </tbody>
             </table>
             </div>           

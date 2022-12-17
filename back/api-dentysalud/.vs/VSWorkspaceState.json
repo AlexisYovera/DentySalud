@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\api-dentysalud",
+    "\\api-dentysalud\\Entitys",
+    "\\api-dentysalud\\Migrations"
   ],
   "SelectedNode": "\\api-dentysalud.sln",
   "PreviewInSolutionExplorer": false
