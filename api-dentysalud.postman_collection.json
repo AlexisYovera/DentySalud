@@ -1,0 +1,543 @@
+{
+	"info": {
+		"_postman_id": "5bbfcaab-bc2b-44a7-982e-b3187ad81e57",
+		"name": "api-dentysalud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "paciente",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/paciente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"paciente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nombrepaciente\": \"Rios\",\r\n        \"apellidopaciente\": \"Cano\",\r\n        \"dni\":\"87654321\",\r\n        \"telefonopaciente\":\"987654321\",\r\n        \"correo\":\"cano@gmail.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/paciente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"paciente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"idpaciente\": 1,\r\n        \"nombrepaciente\": \"Gabriel\",\r\n        \"apellidopaciente\": \"Marques\",\r\n        \"dni\": 12345678,\r\n        \"telefonopaciente\": 123456789,\r\n        \"correo\": \"correo@gmail.com\"      \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/paciente/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"paciente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/paciente/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"paciente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "secretaria",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/secretaria",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"secretaria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nombre\": \"Maria\",\r\n        \"apellido\": \"Cano\",\r\n        \"dni\":\"87654321\",\r\n        \"telefono\":\"987654321\" \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/secretaria",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"secretaria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"codigosecretaria\": 1,\r\n        \"nombre\": \"Karen\",\r\n        \"apellido\": \"Marques\",\r\n        \"dni\": \"12345678\",\r\n        \"telefono\": \"123456789\"    \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/secretaria/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"secretaria",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/secretaria/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"secretaria",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "odontologo",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/odontologo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"odontologo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nombre\": \"Franco\",\r\n        \"apellido\": \"Cano\",\r\n        \"dni\":\"87654321\",\r\n        \"telefono\":\"987654321\" \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/odontologo",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"odontologo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"codigoodontologo\": 1,       \r\n        \"nombre\": \"Ramiro\",\r\n        \"apellido\": \"Cano\",\r\n        \"dni\":\"87654321\",\r\n        \"telefono\":\"987654321\" \r\n      \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/odontologo/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"odontologo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/odontologo/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"odontologo",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "local",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/local",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"local"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"callelocal\": \"un  calle mas\",\r\n        \"numerolocal\": \"15\",\r\n        \"cplocal\":\"1245\"\r\n\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/local",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"local"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"idlocal\": 1,\r\n        \"callelocal\": \"un  calle menos\",\r\n        \"numerolocal\": \"15\",\r\n        \"cplocal\":\"1245\"   \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/local/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"local",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/local/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"local",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cita",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/cita",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"cita"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nombrepaciente\": \"Maria\",\r\n        \"apellidopaciente\": \"Cano\",\r\n        \"local\":\"calle menos\",\r\n        \"hora\":13,\r\n        \"fecha\":\"15/02/2021\" \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/cita",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"cita"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"idcita\": 1,\r\n        \"nombrepaciente\": \"Maria\",\r\n        \"apellidopaciente\": \"Cano\",\r\n        \"local\":\"calle mas\",\r\n        \"hora\":13,\r\n        \"fecha\":\"15/02/2021\"  \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/cita/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"cita",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44372/api-dentysalud/cita/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44372",
+							"path": [
+								"api-dentysalud",
+								"cita",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
